@@ -3,14 +3,14 @@
 
 ## Overview of C
 
-*`sizeof(type)` is used to get the actual size of a data type.
+* `sizeof(type)` is used to get the actual size of a data type.
 
 * `include<stdio.h>` - `stdio.h` is a standard input/output header file. For instance, it provides the `printf` function. 
 
 * `int main (void)` - `int` is the type of the value the function returns. `main` indicates that the starting point of the program. Since an integer must be returned, `return 0` informs the OS that the function is error-free.  
 
 #### Declarations
-*Unlike in Python, in C variables and their types need to be declared before being used. Once set, the type cannot be changed. For example: `int count = 5`
+* Unlike in Python, in C variables and their types need to be declared before being used. Once set, the type cannot be changed. For example: `int count = 5`
 >> All variables must be declared at the top.
 
 #### Pointers
@@ -39,7 +39,7 @@ free(a);
 a=NULL;
 ```
 
-*The memory allocated by the `malloc` function can be freed using the `free()` function. 
+* The memory allocated by the `malloc` function can be freed using the `free()` function. 
 
 #### Input/Output
 
