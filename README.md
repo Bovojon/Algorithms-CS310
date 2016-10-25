@@ -90,3 +90,8 @@ The `printf()` family of functions uses `%` character as a placeholder. When a `
 %d - Take the next argument and print it as an int
 ```
 
+* `void`:
+There are 3 basic ways that void is used:
+1. Function argument: `int myFunc(void)` where the function takes nothing.
+2. Function return value: `void myFunc(int)` where the function returns nothing
+3. Generic data pointer: `void* data` where 'data' is a pointer to data of unknown type, and cannot be dereferenced
