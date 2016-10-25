@@ -1,53 +1,48 @@
 // quickSort.c
 #include <stdio.h>
 
-void quickSort( int[], int, int);
-int partition( int[], int, int);
+// Declare functions quicksort and partition
+void quickSort( int[], int, int);               // void means the function quicksort does not return anything
+int partition( int[], int, int);                // int means the function partition returns a int
 
 
-void main() 
-{
-	int a[] = { 7, 12, 1, -2, 0, 15, 4, 11, 9};
 
-	int i;
-	printf("\n\nUnsorted array is:  ");
-	for(i = 0; i < 9; ++i)
-		printf(" %d ", a[i]);
 
-	quickSort( a, 0, 8);
+// Main function that calls quicksort()
+void main() {
+	int a[14] = { 6, 13, 1, 3, 0, 15, 4, 11, 9, 23, 67, 32, 100, 54};    // Build an array of integers
+
+	int i;                                         // Declare int i before use
+  int * p = a;                                   // Access pointer to memory allocation of array a
+  int end = sizeof(p);                           // length of the array is the size of the pointer p to a. Just calling sizeof(a) will give the size of the pointer and not of the array, since the array will decay into a pointer
+	int lastIteration = end+1;
+  quickSort( a, 0, end);
 
 	printf("\n\nSorted array is:  ");
-	for(i = 0; i < 9; ++i)
+	for(i = 0; i < (lastIteration); ++i)
 		printf(" %d ", a[i]);
-
 }
 
 
 
-void quickSort( int a[], int l, int r)
-{
+// Quicksort function
+void quickSort( int a[], int l, int r) {
    int j;
-
-   if( l < r ) 
-   {
-   	// divide and conquer
-        j = partition( a, l, r);
-       quickSort( a, l, j-1);
-       quickSort( a, j+1, r);
+   if( l < r ) {
+      j = partition( a, l, r);              // Partition array around first element  
+     quickSort( a, l, j-1);                 // Apply Quicksort on left of pivot
+     quickSort( a, j+1, r);                 // Apply quicksort on right of pivot
    }
-	
 }
 
-
-
+// Partition function
 int partition( int a[], int l, int r) {
-   int pivot, i, j, t;
-   pivot = a[l];
+   int pivot, i, j, t;                            // Declare all variables before use
+   pivot = a[l];                                  // Select first element as pivot
    i = l; j = r+1;
 		
-   while( 1)
-   {
-   	do ++i; while( a[i] <= pivot && i <= r );
+   while( 1) {
+   	do ++i; while( a[i] <= pivot && i <= r );     // ++i means increment the value of i, and then return the incremented value.
    	do --j; while( a[j] > pivot );
    	if( i >= j ) break;
    	t = a[i]; a[i] = a[j]; a[j] = t;
