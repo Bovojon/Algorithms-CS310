@@ -10,11 +10,11 @@ int partition( int[], int, int);                // int means the function partit
 
 // Main function that calls quicksort()
 void main() {
-	int a[14] = { 6, 13, 1, 3, 0, 15, 4, 11, 9, 23, 67, 32, 100, 54};    // Build an array of integers
+	int a[] = { 6, 13, 1, 3, 0, 15, 4, 11, 9, 23, 67, 32, 100, 54};    // Build an array of integers
 
 	int i;                                         // Declare int i before use
-  int * p = a;                                   // Access pointer to memory allocation of array a
-  int end = sizeof(p);                           // length of the array is the size of the pointer p to a. Just calling sizeof(a) will give the size of the pointer and not of the array, since the array will decay into a pointer
+  // int * p = a;                                   // Access pointer to memory allocation of array a
+  int end = sizeof(a)/sizeof(*a);                           // length of the array is the size of the pointer p to a. Just calling sizeof(a) will give the size of the pointer and not of the array, since the array will decay into a pointer
 	int lastIteration = end+1;
   quickSort( a, 0, end);
 
