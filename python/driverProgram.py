@@ -14,7 +14,7 @@ def number_generator(n):
 # Quicksort
 def partition(array, begin, end):
     pivot = begin                                           # Choose the first element as the pivot
-    for i in xrange(begin+1, end+1):                        # range returns a list while xrange returns an xrange object which is an immutable sequence and takes the same amount of memory space
+    for i in range(begin+1, end+1):                        # range returns a list while xrange returns an xrange object which is an immutable sequence and takes the same amount of memory space
         if array[i] <= array[begin]:                        # For each element after the first, if it is smaller than first, place it behind the first
             pivot += 1
             array[i], array[pivot] = array[pivot], array[i]
@@ -48,11 +48,17 @@ def main():
 		for line in f.readlines():
 			listLines = line.split(',')
 			for integer in listLines:
-				arrayNum.append(integer)
+				arrayNum.append(int(integer))
 
-		# Pass the array from each file to the sorting algorithms 
+		# Pass the array from each file to the sorting algorithms
+
+		# For Testing: 
+		# print(arrayNum)
+		# array = quicksort(arrayNum)
+		# print(array)
+
+
 		time = timeit.Timer(quicksort(arrayNum)).timeit()
-
 		print("Input size:                        Time Cost:")
 		print(i+"                                   {} ms".format(time))
 

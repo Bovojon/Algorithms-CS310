@@ -14,4 +14,4 @@ def number_generator(n):
 
 
 
-number_generator(10);
+number_generator(1000);
