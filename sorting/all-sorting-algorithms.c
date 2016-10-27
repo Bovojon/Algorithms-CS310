@@ -164,10 +164,32 @@ void sorter(int size)
       merge[i] = insertion[i];
       quick[i] = merge[i];
     }
-  
+
+  // Run insertion sort
+  clock_t startIn = clock();
   insertionsort(insertion, size);
+  clock_t finishIn = clock();
+
+  double timeIn = (startIn-finishIn)/CLOCKS_PER_SEC;
+  printf("Running time of Insertion: %f seconds\n", timeIn);
+  
+  // Run merge sort
+  clock_t startMe = clock();
   mergesort(merge, size);
+  clock_t finishMe = clock();
+
+  double timeMe = (startMe-finishMe)/CLOCKS_PER_SEC;
+  printf("Running time of MergeSort: %f seconds\n", timeMe);
+
+  // Run quicksort
+  clock_t startQu = clock();
   quickSort(quick, 0, size);
+  clock_t finishQu = clock();
+
+  double timeQu = (startQu-finishQu)/CLOCKS_PER_SEC;
+  printf("Running time of Quicksort: %f seconds\n", timeQu);
+
+
   
   for(int j = 0; j < size; j++)
     {
