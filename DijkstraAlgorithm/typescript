@@ -1,0 +1,23 @@
+CS410 - Dijkstra's Algorithm
+Node A:  0  Node B:  1 Cost:  2
+Node A:  1  Node B:  3 Cost:  2
+Node A:  0  Node B:  2 Cost:  4
+Node A:  2  Node B:  3 Cost:  4
+Node A:  1  Node B:  2 Cost:  1
+Link count:  5 Node Count:  4
+  Source:  0   Destination:  0   Route:  -1   Cost:  0
+  Source:  0   Destination:  1   Route:  1    Cost:  2
+  Source:  0   Destination:  2   Route:  1    Cost:  3
+  Source:  0   Destination:  3   Route:  1    Cost:  4
+  Source:  1   Destination:  0   Route:  0    Cost:  2
+  Source:  1   Destination:  1   Route:  -1   Cost:  0
+  Source:  1   Destination:  2   Route:  2    Cost:  1
+  Source:  1   Destination:  3   Route:  3    Cost:  2
+  Source:  2   Destination:  0   Route:  1    Cost:  3
+  Source:  2   Destination:  1   Route:  1    Cost:  1
+  Source:  2   Destination:  2   Route:  -1   Cost:  0
+  Source:  2   Destination:  3   Route:  1    Cost:  3
+  Source:  3   Destination:  0   Route:  1    Cost:  4
+  Source:  3   Destination:  1   Route:  1    Cost:  2
+  Source:  3   Destination:  2   Route:  1    Cost:  3
+  Source:  3   Destination:  3   Route:  -1   Cost:  0
