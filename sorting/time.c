@@ -1,3 +1,8 @@
+#include <time.h>
+#include <stdio.h>
+
+
+// quickSort.c
 #include <stdio.h>
 
 // Declare functions quicksort and partition
@@ -5,22 +10,28 @@ void quickSort( int[], int, int);               // void means the function quick
 int partition( int[], int, int);                // int means the function partition returns a int
 
 
-
-
 // Main function that calls quicksort()
-void main() {
+int main() {
 	int a[] = { 6, 13, 1, 3, 0, 15, 4, 11, 9, 23, 67, 32, 100, 54};    // Build an array of integers
 
-	int i;                                         // Declare int i before use
-  // int * p = a;                                   // Access pointer to memory allocation of array a
-  int end = sizeof(a)/sizeof(*a);                           // length of the array is the size of the pointer p to a. Just calling sizeof(a) will give the size of the pointer and not of the array, since the array will decay into a pointer
+	int i;                                          // Declare int i before use
+  	// int * p = a;                                 // Access pointer to memory allocation of array a
+  	int end = sizeof(a)/sizeof(*a);                 // length of the array is the size of the pointer p to a. Just calling sizeof(a) will give the size of the pointer and not of the array, since the array will decay into a pointer
 	int lastIteration = end+1;
-  quickSort( a, 0, end);
+
+	clock_t start = clock();					    // Start the timer
+  	quickSort( a, 0, end);							// Run quicksort
+  	clock_t finish = clock();						// End the timer
 
 	printf("\n\nSorted array is:  ");
 	for(i = 0; i < (lastIteration); ++i)
 		printf(" %d ", a[i]);
+
+	printf("Running time: %f seconds\n", (double)(start-finish)/CLOCKS_PER_SEC);
+	return 0;
 }
+
+
 
 
 
